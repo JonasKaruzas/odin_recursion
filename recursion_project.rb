@@ -20,4 +20,14 @@ def fibs(num)
   p arr
 end
 
-fibs(10)
+# fibs(8)
+
+def fibs_rec(num)
+  return [0] if num == 0
+  return [0, 1] if num == 1
+
+  arr = fibs_rec(num - 1)
+  arr << arr[-2] + arr[-1]
+end
+
+# p fibs_rec(6)
