@@ -52,4 +52,30 @@ def flatten(arr, result = [])
   result
 end
 
-p flatten([1, [2], 3, 4])
+# p flatten([1, [2], 3, 4])
+
+
+def to_roman(num, result = "")
+  roman_mapping = {
+    1000 => "M",
+    900 => "CM",
+    500 => "D",
+    400 => "CD",
+    100 => "C",
+    90 => "XC",
+    50 => "L",
+    40 => "XL",
+    10 => "X",
+    9 => "IX",
+    5 => "V",
+    4 => "IV",
+    1 => "I"
+  }
+
+  if num.digits.length == 4
+    result += roman_mapping[1000]
+  end
+  result
+end
+
+p to_roman(1555)
