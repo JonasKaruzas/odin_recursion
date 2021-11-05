@@ -37,7 +37,19 @@ def fib(n)
   return 1 if n == 1
 
   fib(n - 1) + fib(n - 2)
-
 end
 
-p fib(6)
+# p fib(6)
+
+def flatten(arr, result = [])
+  arr.each do |item|
+    if item.is_a?(Array)
+      flatten(item, result)
+    else
+      result.push(item)
+    end
+  end
+  result
+end
+
+p flatten([1, [2], 3, 4])
