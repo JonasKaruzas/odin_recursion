@@ -10,7 +10,7 @@ end
 
 def palindrome(word)
   false if word.length.even?
-  
+
   if word[0] == word[-1] && word.length >1
     palindrome(word[1..-2])
     true
@@ -26,11 +26,18 @@ def bottles(n)
     puts 'no more beer on the wall'
     return
   end
-
   puts "#{n} bottles of beer on the wall"
+  bottles(n - 1)
+end
 
-  bottles(n-1)
+# bottles(10)
+
+def fib(n)
+  return 0 if n == 0
+  return 1 if n == 1
+
+  fib(n - 1) + fib(n - 2)
 
 end
 
-bottles(10)
+p fib(6)
